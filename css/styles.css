@@ -1,10 +1,11 @@
-#pizza {
-}
-
-#order {
-
+#bottom {
+  display: none;
 }
 
 #show-pizza {
+  display: none;
+}
+
+#orderSummary {
   display: none;
 }

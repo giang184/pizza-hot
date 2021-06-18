@@ -48,33 +48,34 @@
             </select>
             <br>
           </div>
-          <!-- <p>Select your toppings:</p>
+          <p>Select your toppings:</p>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="toppings1" value="cheese" checked>
+            <input class="form-check-input" type="checkbox" id="cheese" checked>
             <label class="form-check-label" for="cheese">Cheese</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="toppings2" value="pepperoni">
+            <input class="form-check-input" type="checkbox" id="pepperoni">
             <label class="form-check-label" for="pepperoni">Pepperoni</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="toppings3" value="sausage">
+            <input class="form-check-input" type="checkbox" id="sausage">
             <label class="form-check-label" for="sausage">Sausage</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="toppings4" value="mushroom">
+            <input class="form-check-input" type="checkbox" id="mushroom">
             <label class="form-check-label" for="mushroom">Mushroom</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="toppings5" value="pineapple">
+            <input class="form-check-input" type="checkbox" id="pineapple">
             <label class="form-check-label" for="pineapple">Pineapple</label>
-          </div> -->
+          </div>
           <div>
             <br>
             <button type="addPizza" class="btn-primary">Add Pizza</button>
-            <button type="submit" class="btn-warning">Complete order</button>
+            
           </div>
         </form>
+        
       </div>
 
       <div class="col-md-1">
@@ -92,14 +93,16 @@
           <p>Size: <span class="size"></span></p>
           <p>Crust: <span class="crust"></span></p>
           <p>Sauce: <span class="sauce"></span></p>
-          <!-- <p>toppings: <span class="toppings"></span></p> -->
+          <p>toppings: <span class="toppings"></span></p>
           <div id="buttons"></div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
+    <br>
+    <button class="btn-warning" id="completeOrder">Complete order</button>
+    <div id="bottom">
+      <div class="row">
+        <div class="col-md-6">
           <form id="order">
             <br>
             <hr>
@@ -117,20 +120,35 @@
               <br>
             </div>
             <div>
-              <label for="option" id="option">Pick up options: </label>
-              <select id="option">
-                <option value="takeout">Carry out</option>
-                <option value="delivery">Delivery</option>
-              </select>
+              <label for="option">Pick up options: </label>
+                <select class="form-control" id="option">
+                  <option value="takeout">Carry out</option>
+                  <option value="delivery">Delivery</option>
+                </select>
+
             </div>
             <br>
             <button type="submit" class="btn-success">Submit</button>
           </form>
         </div>
+
+        <div class="col-md-1">
+        
+        </div>
+        
+        <div class="col-md-4">
+          <div id="orderSummary">
+            <h2>Order Summary:</h2>
+            <p>Name: <span class="name"></span></p>
+            <p>Address: <span class="address"></span></p>
+            <p>Order: <span class="order"></span> pizza(s)</p>
+            <p>Subtotal: $<span class="subtotal"></span></p>
+            <p>Total: $<span class="total"></span></p>
+            <button class="btn btn-danger" id="startNew">Start New Order</button>
+          </div>
+        </div>
       </div>
     </div>
-
-
-  </div>
+</div>
 </body>
 </html>
