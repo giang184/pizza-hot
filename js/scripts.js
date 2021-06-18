@@ -34,11 +34,11 @@ Order.prototype.deletePizza = function (id) {
 }
 
 // Business Logic for Pizza ---------
-function Pizza (size, crust, sauce, toppings) {
+function Pizza (size, crust, sauce) {
   this.size = size;
   this.crust = crust;
   this.sauce = sauce;
-  this.toppings = toppings;
+  //this.toppings = toppings;
 }
 
 Pizza.prototype.calculateCost = function () {
@@ -57,12 +57,12 @@ Pizza.prototype.calculateCost = function () {
     cost += 2;
 
     //additional charges for toppings
-  if(this.toppings.length < 2)
-    cost++;
-  else if(this.toppings.length < 3)
-    cost+=2;
-  else
-    cost+=4;
+  // if(this.toppings.length < 2)
+  //   cost++;
+  // else if(this.toppings.length < 3)
+  //   cost+=2;
+  // else
+  //   cost+=4;
 
   return cost;
 }
@@ -75,7 +75,7 @@ function displayOrderDetails (orderToDisplay) {
   let text = "";
   Object.keys(orderToDisplay.pizzaList).forEach (function (key) {
     const pizza = orderToDisplay.findPizza(key);
-    text += "<li id=" +pizza.id + ">" + pizza.size + ", " + pizza.toppings + " toppings" + "</li>";
+    text += "<li id=" +pizza.id + ">" + pizza.size + ", "  + "</li>";
   });
   pizzaUL.html(text);
 }
@@ -86,7 +86,7 @@ function showPizza (pizzaID) {
   $(".size").html(pizza.size);
   $(".crust").html(pizza.crust);
   $(".sauce").html(pizza.sauce);
-  $(".toppings").html(pizza.toppings);
+  //$(".toppings").html(pizza.toppings);
   let buttons = $("#buttons");
   buttons.empty();
   buttons.append("<button class='deleteButton' id=" + pizza.id + ">Delete</button>");
@@ -110,10 +110,10 @@ $(document).ready(function () {
     const inputtedSize = $("#size").val();
     const inputtedCrust = $("#crust").val();
     const inputtedSauce = $("#sauce").val();
-    const inputtedToppings = $(":checkbox").val();
+    //const inputtedToppings = $("#toppings").val();
 
 
-    const newPizza = new Pizza(inputtedSize, inputtedCrust, inputtedSauce, inputtedToppings);
+    const newPizza = new Pizza(inputtedSize, inputtedCrust, inputtedSauce);
     myOrder.addPizza(newPizza);
     displayOrderDetails(myOrder);
   });
