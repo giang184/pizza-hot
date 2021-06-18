@@ -17,7 +17,7 @@
     <br>
     <div class="row">
       <div class="col-md-6">
-        <form id="pizza">
+        <form id="new-pizza">
           <h5>Build your own pizzas:</h5>
           <br>
           <div>
@@ -32,9 +32,9 @@
           <div>
             <label for="crust">Select your crust: </label>
             <select class="form-control" id="crust">
-              <option value="pan">Hand toss</option>
+              <option value="hand-toss">Hand Toss</option>
               <option value="thin">Thin crust</option>
-              <option value="deep">Deep dish</option>
+              <option value="deep-dish">Deep dish</option>
               <option value="stuffed">Stuffed crust</option>
             </select>
             <br>
@@ -80,8 +80,20 @@
       <div class="col-md-1">
       </div>
       
-      <div class="col-md-4">
-        
+      <div class="col-md-4">\
+        <div>
+          <h2>Pizza List:</h2>
+          <p>click on any pizza to see its details</p>
+          <ul id="pizzaList"></ul>
+        </div>
+        <div id = "show-pizza">
+          <h2>Pizza Details:</h2>
+          <p>Size: <span class="size"></span></p>
+          <p>Crust: <span class="crust"></span></p>
+          <p>Sauce: <span class="sauce"></span></p>
+          <p>toppings: <span class="toppings"></span></p>
+          <div id="buttons"></div>
+        </div>
       </div>
     </div>
     <div class="row">

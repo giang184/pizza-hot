@@ -66,3 +66,55 @@ Pizza.prototype.calculateCost = function () {
 
   return cost;
 }
+
+// User Interface Logic ---------
+let myOrder = new Order ();
+
+function displayOrderDetails (orderToDisplay) {
+  let pizzaUL = $("ul#pizzaList");
+  let text = "";
+  Object.keys(orderToDisplay.pizzaList).forEach (function (key) {
+    const pizza = orderToDisplay.findPizza(key);
+    text += "<li id=" +pizza.id + ">" + pizza.size + ", " + pizza.toppings + " toppings" + "</li>";
+  });
+  pizzaUL.html(text);
+}
+
+function showPizza (pizzaID) {
+  const pizza = myOrder.findPizza(pizzaID);
+  $("#show-pizza").show();
+  $(".size").html(pizza.size);
+  $(".crust").html(pizza.crust);
+  $(".sauce").html(pizza.sauce);
+  $(".toppings").html(pizza.toppings);
+  let buttons = $("#buttons");
+  buttons.empty();
+  buttons.append("<button class='deleteButton' id=" + pizza.id + ">Delete</button>");
+}
+
+function attachListeners() {
+  $("ul#pizzaList").on("click", "li", function () {
+    showPizza(this.id);
+  });
+  $("#buttons").on("click", ".deleteButton", function () {
+    myOrder.deletePizza(this.id);
+    $("#show-pizza").hide();
+    displayOrderDetails(myOrder);
+  });
+}
+
+$(document).ready(function () {
+  attachListeners();
+  $("form#new-pizza").submit(function (event) {
+    event.preventDefault();
+    const inputtedSize = $("#size").val();
+    const inputtedCrust = $("#crust").val();
+    const inputtedSauce = $("#sauce").val();
+    const inputtedToppings = $("#toppings").val();
+
+
+    const newPizza = new Pizza(inputtedSize, inputtedCrust, inputtedSauce, inputtedToppings);
+    myOrder.addPizza(newPizza);
+    displayOrderDetails(myOrder);
+  });
+});
