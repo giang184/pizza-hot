@@ -15,49 +15,94 @@
     <h1> Pizza Hot</h1>
     <hr>
     <br>
+    <div class="row">
+      <div class="col-md-6">
         <form id="pizza">
-          <h5> build your own pizzas by selecting from the following options</h5>
+          <h5>Build your own pizzas:</h5>
           <br>
-          <div class="form">
-            <label for="name" class="name">Name: </label>
-            <input type="text" class="name">
-          </div>
-            <div class="form">
-            <label for="address" class="address">Address: </label>
-            <input type="text" class="address">
-          </div>
-          <div class="form">
-            <label for="option" class="option">Pick up options: </label>
-            <select class="form" id="option">
-              <option value="takeout">Carry out</option>
-              <option value="delivery">Delivery</option>
+          <div>
+            <label for="crust">Select your crust: </label>
+            <select class="form-control" id="crust">
+              <option value="pan">Hand toss</option>
+              <option value="thin">Thin crust</option>
+              <option value="deep">Deep dish</option>
+              <option value="stuffed">Stuffed crust</option>
             </select>
+            <br>
           </div>
-          <button type="submit" class="btn-primary">Submit</button>
-        </form>
-        <br>
-        <hr>
-        <br>
-        <form id="pizza">
-          <h5> build your own pizzas by selecting from the following options</h5>
-          <br>
-          <div class="form">
-            <label for="name" class="name">Name: </label>
-            <input type="text" class="name">
-          </div>
-            <div class="form">
-            <label for="address" class="address">Address: </label>
-            <input type="text" class="address">
-          </div>
-          <div class="form">
-            <label for="option" class="option">Pick up options: </label>
-            <select class="form" id="option">
-              <option value="takeout">Carry out</option>
-              <option value="delivery">Delivery</option>
+          <div>
+            <label for="sauce">Select your sauce option: </label>
+            <select class="form-control" id="sauce">
+              <option value="marinara">Marinara Sauce</option>
+              <option value="bbq">BBQ Sauce</option>
+              <option value="white">Alfredo Sauce</option>
             </select>
+            <br>
           </div>
-          <button type="submit" class="btn-primary">Submit</button>
+          <p>Select your toppings:</p>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="toppings" value="cheese" checked>
+            <label class="form-check-label" for="cheese">Cheese</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="toppings" value="pepperoni">
+            <label class="form-check-label" for="pepperoni">Pepperoni</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="toppings" value="sausage">
+            <label class="form-check-label" for="sausage">Sausage</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="toppings" value="mushroom">
+            <label class="form-check-label" for="mushroom">Mushroom</label>
+          </div>
+          <div>
+            <br>
+            <button type="addPizza" class="btn-primary">Add Pizza</button>
+            <button type="submit" class="btn-warning">Complete order</button>
+          </div>
         </form>
+      </div>
+
+      <div class="col-md-1">
+      </div>
+      
+      <div class="col-md-4">
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <form id="order">
+            <br>
+            <hr>
+            <br>
+            <h5>Fill out the form to complete your order</h5>
+            <br>
+            <div>
+              <label for="name" class="name">Name: </label>
+              <input type="text" class="form-control" id="name">
+              <br>
+            </div>
+              <div >
+              <label for="address" class="address">Address: </label>
+              <input type="text" class="form-control" id="address">
+              <br>
+            </div>
+            <div>
+              <label for="option" id="option">Pick up options: </label>
+              <select id="option">
+                <option value="takeout">Carry out</option>
+                <option value="delivery">Delivery</option>
+              </select>
+            </div>
+            <br>
+            <button type="submit" class="btn-success">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
 
 
   </div>
