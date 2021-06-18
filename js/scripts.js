@@ -44,7 +44,7 @@ function Pizza (size, crust, sauce, toppings) {
 }
 
 Pizza.prototype.calculateCost = function () {
-  let cost = 7;
+  let cost = 10;
 
   //additional charges for size
   if (this.size === "small")
@@ -152,17 +152,20 @@ $(document).ready(function () {
     if($("#option").val() === "delivery")
     {
       myOrder.total += 5;
-      $(".total").text( myOrder.total + " ($5 added for delivery)");
+      $(".total").text( (1.1*myOrder.total).toFixed(2) + " (including tax and $5 delivery fee)");
     }
     else {
-      $(".total").html(myOrder.total);
+      $(".total").html((1.1*myOrder.total).toFixed(2) + " (including tax)");
     }
 
     $("#orderSummary").show();
   });
 
   $("button#startNew").click(function() {
-    $("#test").toggle();
+    myOrder = new Order();
+    $("#bottom").toggle();
+    $("#orderSummary").toggle();
+    displayOrderDetails(myOrder);
   });
 });
 
