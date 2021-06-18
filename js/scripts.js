@@ -110,7 +110,7 @@ $(document).ready(function () {
     const inputtedSize = $("#size").val();
     const inputtedCrust = $("#crust").val();
     const inputtedSauce = $("#sauce").val();
-    const inputtedToppings = $("#toppings").val();
+    const inputtedToppings = $(":checkbox").val();
 
 
     const newPizza = new Pizza(inputtedSize, inputtedCrust, inputtedSauce, inputtedToppings);
