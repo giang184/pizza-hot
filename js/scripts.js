@@ -77,7 +77,7 @@ function displayOrderDetails (orderToDisplay) {
   let text = "";
   Object.keys(orderToDisplay.pizzaList).forEach (function (key) {
     const pizza = orderToDisplay.findPizza(key);
-    text += "<li id=" +pizza.id + ">" + pizza.size + ", " + pizza.toppings.length + " toppings" +"</li>";
+    text += "<li id=" +pizza.id + ">" + pizza.size + ", " + pizza.toppings.length + " topping(s)" +"</li>";
   });
   pizzaUL.html(text);
 }
@@ -137,7 +137,6 @@ $(document).ready(function () {
   $("button#completeOrder").click(function() {
     $("#bottom").toggle();
   });
-
 
   $("form#order").submit(function (event) {
     event.preventDefault();
