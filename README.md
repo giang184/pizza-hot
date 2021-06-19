@@ -27,6 +27,37 @@ _This is my website written to take pizza orders from a user and displaying it o
 
 * none
 
+## Test Spec
+
+# Describe: Order()
+
+- Test: "Creating an Order object by calling Order() constructor"
+  - Code: let myOrder = Order();
+  - Expected Output: create an Order object with default values
+
+# Describe: Pizza()
+- Test: "Creating a pizza object by calling function Pizza (size, crust, sauce, toppings) constructor"
+  - Code: let p = new Pizza("small", "thin", "bbq", ["cheese", "sausage"]);
+  - Expected Output: create an a Pizza object with arguments.
+
+# Describe: Order.prototype.addPizza()
+
+- Test: "add pizza object to an order"
+  - Code: myOrder.addPizza(p);
+  - Expected Output: myOrder will have 1 pizza added
+
+# Describe: Pizza.prototype.calculateCost()
+- Test: "the calculation of a pizza"
+  - Code: p.calculateCost();
+  - Expected Output: the cost will be calculated correctly to the parameters specified in the function
+
+# Describe: Order.prototype.deletePizza()
+
+- Test: "delete pizza objects to an order"
+  - Code: myOrder.deletePizza(1);
+  - Expected Output: myOrder will remote the pizza from the order
+
+
 ## License
 
 * _[MIT](https://opensource.org/licenses/MIT)_
